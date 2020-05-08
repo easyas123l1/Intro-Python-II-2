@@ -3,9 +3,10 @@
 
 
 class Player:
-    def __init__(self, name, location):
+    def __init__(self, name, location, items=[]):
         self.name = name
         self.location = location
+        self.items = items
 
     def move_to(self, direction, current_loc):
         # try to move in the specified direction
@@ -18,3 +19,9 @@ class Player:
         print("You can't go that way\n")
 
         return current_loc
+
+    def add_item(self, item):
+        self.items.append(item)
+
+    def remove_item(self, item):
+        self.items.pop(item)
